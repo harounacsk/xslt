@@ -3,7 +3,6 @@
 	<xsl:template match="infos">
 		<xsl:element name="infos">
 			<xsl:for-each-group select="info" group-by="concat(@prid, '|', @locid, '|', @from)">
-				<!--<xsl:for-each-group select="info" group-by="concat(@prid, '|', @locid, '|', @from)">&amp;-->
 				<info prid="{@prid}" locid="{@locid}" from="{@from}">
 					<xsl:for-each select="current-group()">
 						<prname qt="{@qt}"><xsl:value-of select="@prname"/></prname>
